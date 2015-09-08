@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>JS效果联系</title>
+
+    <style type="text/css">
+    p{
+    	font-size: 1.5em;
+    }
+
+    .intro{
+    	font-size: 1.2em;
+    	color: #555550;
+    }
+    .xui-showFrame{
+    	background-color: #F7F7F7;
+    	height: 400px;
+    	width: 500px;
+    	border:1px solid #555550;
+    }
+
+    .xui-showFrame>p{
+    	font-size: 1.2em;
+    	color: #555550;
+    }
+
+    </style>
+    <script src="jquery-2.1.4.min.js"></script>
+</head>
+<body>
+<div>
+	<p>鼠标坐标展示</p>
+	<p>鼠标坐标为:<span class="intro"></span></p>
+	<div class="xui-showFrame xa-mouse_show_xy" onclick="xx()">
+		<p>请将鼠标移动至区域内</p>
+	</div>
+</div>
+
+<script type="text/javascript">
+	// $(document).ready(function(){
+	// 	$('.xa-mouse_show_xy').mousemove(function(e){
+	// 		$('.intro').text('X:'+e.pageX+',Y:'+e.pageY);
+	// 		// console.log(e);
+	// 	});
+	// });
+
+
+
+		var fr = document.getElementsByClassName('xa-mouse_show_xy');
+		console.log(fr);
+
+		document.getElementsByClassName('xa-mouse_show_xy')[0].onclick = function(){
+			console.log('ss');
+		};
+
+		function xx(){
+			console.log('ka');
+		}
+
+	// window.onload = function(){
+	// }
+
+</script>
+</body>
+</html>
