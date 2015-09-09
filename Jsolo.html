@@ -1,66 +1,77 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
+
 <head>
     <meta charset="UTF-8">
     <title>JS效果联系</title>
-
     <style type="text/css">
-    p{
-    	font-size: 1.5em;
+    p {
+        font-size: 1.5em;
     }
-
-    .intro{
-    	font-size: 1.2em;
-    	color: #555550;
+    
+    .intro {
+        font-size: 1.2em;
+        color: #555550;
     }
-    .xui-showFrame{
-    	background-color: #F7F7F7;
-    	height: 400px;
-    	width: 500px;
-    	border:1px solid #555550;
+    
+    .xui-showFrame {
+        background-color: #F7F7F7;
+        height: 400px;
+        width: 500px;
+        border: 1px solid #555550;
     }
-
-    .xui-showFrame>p{
-    	font-size: 1.2em;
-    	color: #555550;
+    
+    .xui-showFrame>p {
+        font-size: 1.2em;
+        color: #555550;
     }
-
     </style>
-    <script src="jquery-2.1.4.min.js"></script>
 </head>
+
 <body>
-<div>
-	<p>鼠标坐标展示</p>
-	<p>鼠标坐标为:<span class="intro"></span></p>
-	<div class="xui-showFrame xa-mouse_show_xy" onclick="xx()">
-		<p>请将鼠标移动至区域内</p>
-	</div>
-</div>
+    <div class="mouse_show">
+        <p>鼠标坐标展示</p>
+        <p>鼠标坐标为:<span class="intro"></span></p>
+        <div class="xui-showFrame xa-mouse_show_xy" onclick="xx()">
+            <p>请将鼠标移动至区域内</p>
+        </div>
+    </div>
+    <div>
+        <div>
+            <p>AJAX</p>
+        </div>
+        <div>
+            <button class="xa-ajax_fr btn" onclick="ajax_load()">AJAX.load效果：点我</button>
+        </div>
+        <div class="tt">点击后，鼠标进入区域，变为坐标区域</div>
+    </div>
+    <script src="jquery-2.1.4.min.js"></script>
+    <script type="text/javascript">
+    //鼠标指针
+    //JQuery
+    $(document).ready(function() {
+        $('.xa-mouse_show_xy').mousemove(function(e) {
+            $('.intro').text('X:' + e.pageX + ',Y:' + e.pageY);
+            // console.log(e);
+        });
+    });
 
-<script type="text/javascript">
-	// $(document).ready(function(){
-	// 	$('.xa-mouse_show_xy').mousemove(function(e){
-	// 		$('.intro').text('X:'+e.pageX+',Y:'+e.pageY);
-	// 		// console.log(e);
-	// 	});
-	// });
+    // JS
+    // var fr = document.getElementsByClassName('xa-mouse_show_xy');
+    // console.log(fr);
 
+    // document.getElementsByClassName('xa-mouse_show_xy')[0].onclick = function(){
+    // 	console.log('ss');
+    // };
 
-
-		var fr = document.getElementsByClassName('xa-mouse_show_xy');
-		console.log(fr);
-
-		document.getElementsByClassName('xa-mouse_show_xy')[0].onclick = function(){
-			console.log('ss');
-		};
-
-		function xx(){
-			console.log('ka');
-		}
-
-	// window.onload = function(){
-	// }
-
-</script>
+    // function xx(){
+    // 	console.log('ka');
+    // }
+    //AJAX效果
+    function ajax_load() {
+        $('.tt').load("Jsolo.html .intro");
+    }
+    </script>
 </body>
+
 </html>
